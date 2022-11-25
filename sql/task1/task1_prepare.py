@@ -1,8 +1,9 @@
 import pyodbc
-from fib import fib_row
 
-connection_to_db = pyodbc.connect(
-    r"Driver={SQL Server};Server=YESHA\SQLEXPRESS;Database=sbertest;Trusted_Connection=yes;")
+from fib import fib_row
+from sql.settings import db_address
+
+connection_to_db = pyodbc.connect(db_address)
 
 cursor = connection_to_db.cursor()
 cursor.execute("""

@@ -2,11 +2,12 @@ import pyodbc
 from natasha import NamesExtractor, MorphVocab
 from prettytable import PrettyTable
 
+from sql.settings import db_address
+
 morph_vocab = MorphVocab()
 names_extractor = NamesExtractor(morph_vocab)
 
-connection_to_db = pyodbc.connect(
-    r"Driver={SQL Server};Server=YESHA\SQLEXPRESS;Database=sbertest;Trusted_Connection=yes;")
+connection_to_db = pyodbc.connect(db_address)
 
 cursor = connection_to_db.cursor()
 cursor.execute("""

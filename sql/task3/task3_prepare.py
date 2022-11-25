@@ -1,7 +1,8 @@
 import pyodbc
 
-connection_to_db = pyodbc.connect(
-    r"Driver={SQL Server};Server=YESHA\SQLEXPRESS;Database=sbertest;Trusted_Connection=yes;")
+from sql.settings import db_address
+
+connection_to_db = pyodbc.connect(db_address)
 
 cursor = connection_to_db.cursor()
 cursor.execute("""
@@ -37,5 +38,3 @@ VALUES (2, 'Стул', 2000), (1, 'Кресло', 5000), (5, 'Телевизор
 """
 cursor.execute(query_string)
 connection_to_db.commit()
-
-
