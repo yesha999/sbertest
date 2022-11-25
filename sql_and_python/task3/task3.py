@@ -1,6 +1,6 @@
 import pyodbc
 
-from sql.settings import db_address
+from sql_and_python.settings import db_address
 
 connection_to_db = pyodbc.connect(db_address)
 

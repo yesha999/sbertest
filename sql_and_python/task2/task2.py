@@ -2,7 +2,7 @@ import pyodbc
 from natasha import NamesExtractor, MorphVocab
 from prettytable import PrettyTable
 
-from sql.settings import db_address
+from sql_and_python.settings import db_address
 
 morph_vocab = MorphVocab()
 names_extractor = NamesExtractor(morph_vocab)
