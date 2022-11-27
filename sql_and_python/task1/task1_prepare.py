@@ -13,7 +13,7 @@ CREATE TABLE task1 (
 );""")
 connection_to_db.commit()
 
-fib_list = list(map(str, fib_row(100)))  # Мы должны сделать числа строками,
+fib_list = list(map(float, fib_row(100)))  # Мы должны сделать числа строками или дробными,
 # так как слишком большие числа в данном ряду не умещаются даже в bigint
 
 cursor.execute("""
